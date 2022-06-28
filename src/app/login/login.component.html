@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center mt-4">
+      <h1 style="color: aqua">Reliance Industries</h1>
+      <p style="color: #fff; font-size: 13px">
+        A place where your dreams come to true
+      </p>
+      <hr style="color: #fff" />
+    </div>
+  </div>
+</div>
+<div id="container">
+  <h3>Login</h3>
+  <br />
+  <form>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        [(ngModel)]="email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        #PasswordInput
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" routerLink="/inventory">
+      Submit
+    </button>
+  </form>
+</div>

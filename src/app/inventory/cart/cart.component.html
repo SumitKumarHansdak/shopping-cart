@@ -1,0 +1,43 @@
+<h3
+  *ngIf="cartItems.length == 0; else showCart"
+  class="display-5 text-center mt-5"
+  style="color: #fff"
+>
+  Cart is empty!
+</h3>
+
+<ng-template #showCart>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h3 class="display-5 text-center mt-5" style="color: #fff">
+          Cart Items
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        *ngFor="let item of cartItems; let i = index"
+        class="col-md-4 text-center"
+        style="color: #fff"
+      >
+        <div
+          class="card"
+          style="
+            width: 18rem;
+            background-color: #1f2123;
+            border: 1px solid #fff;
+          "
+        >
+          <img [src]="item.imagePath" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text" style="font-size: 15px">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

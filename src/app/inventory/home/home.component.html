@@ -1,0 +1,57 @@
+<div class="text-center" id="home-jumbotron">
+  <h1 class="display-4 mt-4 mb-4" style="color: aqua">
+    Popular Electronic Items
+  </h1>
+  <p style="color: silver">
+    High quality Vectors with worry-free licensing for <br />
+    personal and commercial use
+  </p>
+  <br />
+  <form
+    style="margin-left: 500px; margin-right: 500px"
+    class="d-flex"
+    role="search"
+  >
+    <input
+      class="form-control me-2"
+      type="search"
+      style="background-color: #252728"
+      placeholder="Search"
+      aria-label="Search"
+    />
+  </form>
+</div>
+
+<br />
+<hr style="color: #fff" />
+<br />
+
+<div class="container">
+  <div class="row">
+    <h2 class="mb-5 text-center" style="color: #fff">
+      Shop with us <br /><span style="font-size: 15px"
+        >Exclusive collection of premium watches</span
+      >
+    </h2>
+    <div
+      *ngFor="let item of products; let i = index"
+      class="col-md-4 text-center"
+      style="color: #fff"
+    >
+      <div
+        class="card"
+        style="width: 18rem; background-color: #1f2123; border: 1px solid #fff"
+      >
+        <img [src]="item.imagePath" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text" style="font-size: 15px">
+            {{ item.description }}
+          </p>
+          <a class="btn btn-primary" (click)="onAddToCart(i)">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+</div>
